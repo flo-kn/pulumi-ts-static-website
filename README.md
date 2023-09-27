@@ -59,7 +59,7 @@ For now we simple go with passphrase as [secrets provider](https://www.pulumi.co
 
 Static content gets picked up from the folder `./public`. So put all your HTML, CSS, etc. in there.
 
-E.g. to just test the deployment, create a new file called `index.html`` in the public folder 
+E.g. to just test the deployment, create a new file called `index.html` in the public folder 
 
 ```html
 <html>
