@@ -1,0 +1,3 @@
+name: pulumi-ts-static-website
+runtime: nodejs
+description: S3 Static Website deployed with pulumi and cloudfront CDN and all the things
