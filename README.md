@@ -12,10 +12,16 @@ Prerequs:
 
 - Some Pulumi KnowHow
 - Basic Typescript Node Knowledge
-- AWS Knowledge
+- AWS knowledge, alternative knowledge in some other hyperscaler (Azure, GCP) should be sufficient
+
+Dependencies:
+- [Pulumi](https://www.pulumi.com/docs/install/)
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 ### Login to Cloud account (AWS):
 
-Login to your cloud account with your terminal. E.g. using [AWS SSO](https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) and your configured AWS profile
+[Login](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html) to your AWS account with your terminal. I highly recommend using [AWS SSO](https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) in combination with a configured AWS profile. More details on different options to sign in [here](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html).
 
 Test that you are logged into the right account:
 ```
@@ -49,6 +55,23 @@ pulumi stack init $PULUMI_STACK_NAME
 
 For now we simple go with passphrase as [secrets provider](https://www.pulumi.com/docs/intro/concepts/secrets/). Just choose a proper one and enter it to the prompt
 
+### Add some static HTML content
+
+Static content gets picked up from the folder `./public`. So put all your HTML, CSS, etc. in there.
+
+E.g. to just test the deployment, create a new file called `index.html`` in the public folder 
+
+```html
+<html>
+  <head>
+    <title>Hello Static Website</title><meta charset="UTF-8">
+  </head>
+  <body>
+    <p>Hello, world! Still under construction. 🏗 </p>
+  </body>
+</html>
+```
+
 ### Configure and preview the deployment
 ```sh 
 pulumi preview
@@ -70,9 +93,10 @@ config:
 ```sh 
 pulumi up
 ```
+_(will deploy all infrastructure needed to host the static content and sync the content in the local `./public` folder with the s3 bucket.)_
 
 TODOs:
-- Solution for uncommenting bucketPublicAccessBlock before deploying to the bucket
+- [ ] Solution for uncommenting bucketPublicAccessBlock before deploying to the bucket
 
 Refs:
 - Special thanks to the creators of [My Starting Example: Github - Pulumi Examples](https://github.com/pulumi/examples/tree/master/aws-ts-static-website)
