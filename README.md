@@ -1,10 +1,12 @@
 # pulumi-ts-static-website
 
-Pulumi Typescript Project to Deploy Static Website Content and Infrastructure
+Pulumi Typescript Project to deploy static website content and infrastructure
 
-*Infrastructure components:* S3 Buckets, Cloudfront, Cloudfront Functions ACM SSL Certs, AWS Route 53 DNS, WebACL
+*Infrastructure components:* S3 Buckets, Cloudfront, Cloudfront Functions ACM SSL Certs, AWS Route 53 DNS, WebACL 
 
 *Content:* A Website to publish blog posts
+
+> _hint: Beware of potential costs that the [WebACL causes](https://aws.amazon.com/waf/pricing/). Should be a fixed amount arround $6 per month without the usage based price component._
 
 ## Getting Started
 
