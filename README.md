@@ -1,6 +1,6 @@
 # pulumi-ts-static-website
 
-Pulumi Typescript Project to deploy static website content and infrastructure
+Pulumi Typescript Project to deploy static website content and infrastructure via IAC (infrastructure-as-code).
 
 *Infrastructure components:* S3 Buckets, Cloudfront, Cloudfront Functions ACM SSL Certs, AWS Route 53 DNS, WebACL 
 
@@ -79,7 +79,7 @@ E.g. to just test the deployment, create a new file called `index.html` in the p
 pulumi preview
 ```
 
-Pulumi might prompt you for missing configs. In the end it should  have created a stack Yaml file containing all pulumi configs:
+Pulumi might prompt you for missing configs. In the end it should create a stack `.yaml`-file containing all pulumi configs. You can think of them as environment variables for your infrastructure project:
 
 `./Pulumi.my-cool-blog-prod.yaml`
 ```yaml
@@ -90,6 +90,7 @@ config:
   static-website:author: JonDoe
   static-website:organization: JonDoesOrg
 ```
+> Hint: Dont worry about commiting the `encryptionsalt`. It's the encryption salt of your PULUMI_PASSPHRASE and NOT a secret. 
 
 ### Deploy the stack:
 ```sh 
@@ -97,8 +98,14 @@ pulumi up
 ```
 _(will deploy all infrastructure needed to host the static content and sync the content in the local `./public` folder with the s3 bucket.)_
 
+### Finishing up 
+Add the `.yaml`-file with the configs to your source code version control similar to ensure smooth login next time you want to conduct a change. The PULUMI_PASSPHRASE you should keep secret though. I'd recommend to share within your infrastructure team in your favorite seretmanager. 
+
+Congrats! 🥳 You successfully deployed a static edge optimized website via IAC. 
+
 TODOs:
 - [ ] Solution for uncommenting bucketPublicAccessBlock before deploying to the bucket
+- [ ] Add a on/off switch to WebACL
 
 Refs:
 - Special thanks to the creators of [My Starting Example: Github - Pulumi Examples](https://github.com/pulumi/examples/tree/master/aws-ts-static-website)
