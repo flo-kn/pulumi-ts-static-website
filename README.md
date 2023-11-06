@@ -27,11 +27,11 @@ Dependencies:
 [Login](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html) to your AWS account with your terminal. I highly recommend using [AWS SSO](https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) in combination with a configured AWS profile. More details on different options to sign in [here](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html).
 
 Test that you are logged into the right account:
-```
+```sh
 aws sts get-caller-identity --profile <your-profile>
 ```
 
-Choose a name for your [Pulumi Backend](https://www.pulumi.com/docs/intro/concepts/state/) and create it by following:
+Choose a name for your [Pulumi Backend](https://www.pulumi.com/docs/intro/concepts/state/) and create it by following. Only execute this command once at inital setup of the project:
 
 ```sh
 export PULUMI_BACKEND=<your-pulumi-backend-name>
