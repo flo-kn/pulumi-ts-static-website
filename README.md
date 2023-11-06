@@ -31,12 +31,17 @@ Test that you are logged into the right account:
 aws sts get-caller-identity --profile <your-profile>
 ```
 
-Choose a name for your [Pulumi Backend](https://www.pulumi.com/docs/intro/concepts/state/) and create it by following. Only execute this command once at inital setup of the project:
-
+Choose a name for your [Pulumi Backend](https://www.pulumi.com/docs/intro/concepts/state/) export it as env var to your terminal...
 ```sh
 export PULUMI_BACKEND=<your-pulumi-backend-name>
+```
+
+...and create the s3 bucket holding later holding the remote state of the IAC project by doing the following. Only execute this command once at inital setup of the project:
+
+```sh
 aws s3 mb s3://$PULUMI_BACKEND
 ```
+
 
 Login to Pulumi Backend:
 ```sh
