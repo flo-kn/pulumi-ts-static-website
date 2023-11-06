@@ -14,12 +14,13 @@ Prerequs:
 
 - Some Pulumi KnowHow
 - Basic Typescript Node Knowledge
+- An AWS account with AdministratorAccess or similar permissionSet
 - AWS knowledge, alternative knowledge in some other hyperscaler (Azure, GCP) should be sufficient
 
 Dependencies:
 - [Pulumi](https://www.pulumi.com/docs/install/)
 - [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 ### Login to Cloud account (AWS):
 
