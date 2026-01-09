@@ -1,5 +1,7 @@
 # pulumi-ts-static-website
 
+![Static Badge](https://img.shields.io/badge/knip--builds-official-brightgreen%3Fstyle%3Dflat)
+
 Pulumi Typescript Project to deploy static website content and infrastructure via IAC (infrastructure-as-code).
 
 *Infrastructure components:* S3 Buckets, Cloudfront, Cloudfront Functions ACM SSL Certs, AWS Route 53 DNS, WebACL 
